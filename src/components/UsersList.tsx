@@ -77,6 +77,8 @@ const UsersList = () => {
     } 
   };
 
+  
+
   if (loading)
     return (
       <div className="flex items-center justify-center text-2xl">
@@ -153,7 +155,7 @@ const UsersList = () => {
                   <button className="inline-flex px-4 py-1.5 items-center border border-transparent text-xs font-medium rounded-md text-indigo-500 bg-indigo-200 hover:bg-indigo-100 hover:text-indigo-400 cursor-pointer">
                     Update
                   </button>
-                  <button className="inline-flex px-4 py-1.5 items-center border border-transparent text-xs font-medium rounded-md text-red-500 bg-red-200 hover:bg-red-100 hover:text-red-400 cursor-pointer">
+                  <button onClick={()=> handleDelete(user.id)} className="inline-flex px-4 py-1.5 items-center border border-transparent text-xs font-medium rounded-md text-red-500 bg-red-200 hover:bg-red-100 hover:text-red-400 cursor-pointer">
                     Delete
                   </button>
                 </div>

@@ -1,4 +1,3 @@
-
 import type { User } from "../types/user/user";
 
 const API_URL = "https://jsonplaceholder.typicode.com/users";
@@ -23,4 +22,13 @@ export const createUser = async (user: Omit<User, "id">): Promise<User> => {
     throw Error("Failed to create new user");
   }
   return res.json();
+};
+
+export const deleteUser = async (id: number): Promise<void> => {
+  const res = await fetch(`${API_URL}/${id}`, {
+    method: "DELETE",
+  });
+  if (!res.ok) {
+    throw new Error("Failed to delete user");
+  }
 };
