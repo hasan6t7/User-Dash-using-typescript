@@ -34,7 +34,7 @@ export const updateUser = async (id: number, user: Partial<User>): Promise<User>
   });
   if (!res.ok) throw new Error("Failed to update user");
   return res.json();
-};
+};  
 
 export const deleteUser = async (id: number): Promise<void> => {
   const res = await fetch(`${API_URL}/${id}`, {
